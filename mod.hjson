@@ -3,4 +3,5 @@ displayName: "[red]Do not the Anuke"
 author: "[accent]MEEP of Faith"
 description: "[red]Do not the Anuke"
 version: oh no
+hidden: true
 minGameVersion: 114
