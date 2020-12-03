@@ -29,7 +29,7 @@ const banHammer = new Effect(90, 100, e => {
   var grow = Mathf.curve(e.time, 0, 10);
   var angle = 90 + (90 * Interp.pow5In.apply(fin) * side);
   var x = e.x + handleLength * side;
-  var y = e.y + headLength / 2;
+  var y = e.y + headLength;
   
   grip.trns(angle - 90, 0, handleLength * grow);
   
