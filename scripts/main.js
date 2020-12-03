@@ -43,7 +43,7 @@ const banHammer = new Effect(90, 100, e => {
   //no idea why Mathf.within wasn't working for me.
   //if(Mathf.within(e.time, seed, 1)){
   if(seed - e.time < 1 && seed - e.time > 0){
-    Effect.shake(40 * size, 90 * size, grip.x + x, e.y);
+    Effect.shake(40 * size, 100 * size, grip.x + x, e.y);
   }
 });
 
