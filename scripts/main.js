@@ -14,10 +14,7 @@ const anukeLaserCharge = new Effect(80, 100, e => {
   Fill.circle(e.x, e.y, e.fin() * 10);
 });
 
-const grip = new Vec2();
 const banHammer = new Effect(90, 100, e => {
-  var handle = Color.tan;
-  var head = Color.darkGray;
   var side = Mathf.signs[Mathf.round(Mathf.randomSeed(e.id, 1))];
   var size = 1.5;
   
@@ -31,19 +28,19 @@ const banHammer = new Effect(90, 100, e => {
   var x = e.x + handleLength * side;
   var y = e.y + headLength;
   
-  grip.trns(angle - 90, 0, handleLength * grow);
+  Tmp.v1.trns(angle - 90, 0, handleLength * grow);
   
-  Lines.stroke(4 * size * grow, handle);
+  Lines.stroke(4 * size * grow, Color.tan);
   Draw.alpha(fade);
   Lines.lineAngle(x, y, angle, handleLength * grow);
-  Lines.stroke(12 * size * grow, head);
+  Lines.stroke(12 * size * grow, Color.darkGray);
   Draw.alpha(fade);
-  Lines.lineAngleCenter(grip.x + x, grip.y + y, angle + 90, headLength * grow);
+  Lines.lineAngleCenter(Tmp.v1.x + x, Tmp.v1.y + y, angle + 90, headLength * grow);
   
   //no idea why Mathf.within wasn't working for me.
-  //if(Mathf.within(e.time, seed, 1)){
+  //if(Mathf.within(e.time, seed, 5 * Time.delta)){
   if(seed - e.time < 1 && seed - e.time > 0){
-    Effect.shake(40 * size, 100 * size, grip.x + x, e.y);
+    Effect.shake(40 * size, 100 * size, Tmp.v1.x + x, e.y);
   }
 });
 
