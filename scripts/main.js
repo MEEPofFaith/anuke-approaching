@@ -43,6 +43,7 @@ const banHammer = new Effect(90, 100, e => {
     Effect.shake(40 * size, 100 * size, Tmp.v1.x + x, e.y);
   }
 });
+banHammer.layer = Layer.max;
 
 UnitTypes.corvus.weapons.get(0).bullet.colors = [Color.valueOf("ff000066"), Color.red, Color.white];
 UnitTypes.corvus.weapons.get(0).bullet.shootEffect = anukeLaserCharge;
@@ -51,8 +52,10 @@ UnitTypes.corvus.weapons.get(0).bullet.lightningColor = Color.red;
 UnitTypes.corvus.weapons.get(0).bullet.hitEffect = banHammer;
 
 if(!Vars.headless){
-  const meta = Vars.mods.locateMod("do-not-the-cat").meta;
-  meta.displayName = "[red]Do not the Anuke"
-  meta.author = "[#FCC21B]MEEP of Faith";
-  meta.description = "[red]Do not the Anuke"
+  Core.app.post(() => {
+    const meta = Vars.mods.locateMod("do-not-the-cat").meta;
+    meta.displayName = "[red]Do not the Anuke";
+    meta.author = "[#FCC21B]MEEP of Faith";
+    meta.description = "[red]Do not the Anuke";
+  });
 }
