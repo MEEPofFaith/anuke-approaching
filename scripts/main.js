@@ -37,10 +37,8 @@ const banHammer = new Effect(90, 100, e => {
   Draw.alpha(fade);
   Lines.lineAngleCenter(Tmp.v1.x + x, Tmp.v1.y + y, angle + 90, headLength * grow);
   
-  //no idea why Mathf.within wasn't working for me.
-  //if(Mathf.within(e.time, seed, 5 * Time.delta)){
-  if(seed - e.time < 1 && seed - e.time > 0){
-    Effect.shake(40 * size, 100 * size, Tmp.v1.x + x, e.y);
+  if(Mathf.within(e.time, 0, seed, 0, 0.1 * Time.delta)){
+    Effect.shake(60 * size, 150 * size, Tmp.v1.x + x, e.y);
   }
 });
 banHammer.layer = Layer.max;
