@@ -55,7 +55,7 @@ Planets.sun.lightColor = Color.red;
 Planets.serpulo.orbitRadius = 3.5;
 Planets.serpulo.atmosphereColor = Color.red;
 Planets.serpulo.atmosphereRadIn = 0;
-Planets.serpulo.atmosphereRadOut = 5;
+Planets.serpulo.atmosphereRadOut = 10;
 
 if(!Vars.headless){
   Core.app.post(() => {
