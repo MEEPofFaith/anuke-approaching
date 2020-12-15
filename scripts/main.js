@@ -49,6 +49,14 @@ UnitTypes.corvus.weapons.get(0).bullet.lightColor = Color.red;
 UnitTypes.corvus.weapons.get(0).bullet.lightningColor = Color.red;
 UnitTypes.corvus.weapons.get(0).bullet.hitEffect = banHammer;
 
+Planets.sun.atmosphereRadOut = 5;
+Planets.sun.lightColor = Color.red;
+
+Planets.serpulo.orbitRadius = 3.5;
+Planets.serpulo.atmosphereColor = Color.red;
+Planets.serpulo.atmosphereRadIn = 0;
+Planets.serpulo.atmosphereRadOut = 5;
+
 if(!Vars.headless){
   Core.app.post(() => {
     const meta = Vars.mods.locateMod("do-not-the-cat").meta;
