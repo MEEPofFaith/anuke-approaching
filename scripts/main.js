@@ -62,6 +62,18 @@ if(!Vars.headless){
     const meta = Vars.mods.locateMod("do-not-the-cat").meta;
     meta.displayName = "[red]Do not the Anuke";
     meta.author = "[#FCC21B]MEEP of Faith";
-    meta.description = "[red]Do not the Anuke";
+    meta.description = "[red]Why did you the Anuke";
+  });
+  
+  Events.run(Trigger.newGame, () => {
+    Time.run(Fx.coreLand.lifetime, () => {
+      var core = Vars.player.closestCore();
+      if(core != null){
+        //F u c k i n g   e x p l o d e
+        Fx.dynamicExplosion.at(core.getX(), core.getY(), 20 + Mathf.pow(core.block.size, 2), core.block);
+        Effect.shake(30 + Mathf.pow(core.block.size, 2), 200 + Mathf.pow(core.block.size, 3), core);
+        Vars.ui.showInfoPopup("[red]Suffer. Feel the wrath of Anuke[]", 5, Align.center, 192, 0, 0, 0);
+      }
+    });
   });
 }
