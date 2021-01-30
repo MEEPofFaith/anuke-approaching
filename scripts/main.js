@@ -37,11 +37,14 @@ const banHammer = new Effect(90, 100, e => {
   Draw.alpha(fade);
   Lines.lineAngleCenter(Tmp.v1.x + x, Tmp.v1.y + y, angle + 90, headLength * grow);
   
-  if(Mathf.within(e.time, 0, seed, 0, 0.25)){
-    Effect.shake(60 * size, 150 * size, Tmp.v1.x + x, e.y);
+  if(e.time >= seed && Mathf.within(0, e.time, 0, seed, 1 * Time.delta)){
+    Fx.massiveExplosion.at(Tmp.v1.x + x, e.y);
+    Effect.shake(10 * size, 40 * size, Tmp.v1.x + x, e.y);
   }
 });
-banHammer.layer = Layer.max;
+banHammer.layer = Layer.effect + 1;
+
+// UnitTypes.corvus.weapons.get(0).bullet.hitEffect.at(Vars.player.getX(), Vars.player.getY());
 
 UnitTypes.corvus.weapons.get(0).bullet.colors = [Color.valueOf("ff000066"), Color.red, Color.white];
 UnitTypes.corvus.weapons.get(0).bullet.shootEffect = anukeLaserCharge;
