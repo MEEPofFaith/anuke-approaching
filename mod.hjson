@@ -5,3 +5,4 @@ description: "[red]Do not the Anuke"
 version: oh no
 hidden: true
 minGameVersion: 114
+hideBrowser: true
